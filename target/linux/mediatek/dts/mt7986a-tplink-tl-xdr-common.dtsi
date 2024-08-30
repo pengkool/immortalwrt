@@ -216,13 +216,13 @@
 
 			partition@380000 {
 				label = "fip";
-				reg = <0x380000 0x0200000>;
+				reg = <0x380000 0x0180000>;
 				read-only;
 			};
 
-			partition@580000 {
+			partition@500000 {
 				compatible = "linux,ubi";
-				reg = <0x580000 0x7800000>;
+				reg = <0x500000 0x7300000>;
 				label = "ubi";
 
 				volumes {
