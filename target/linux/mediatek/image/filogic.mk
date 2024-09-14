@@ -215,7 +215,8 @@ define Device/tplink_tl-common
   BLOCKSIZE := 128k
   PAGESIZE := 2048
   KERNEL_IN_UBI := 1
-  DEVICE_PACKAGES := kmod-usb3 kmod-mt7986-firmware mt7986-wo-firmware
+  DEVICE_PACKAGES := kmod-usb3 kmod-mt7915e kmod-mt7986-firmware mt7986-wo-firmware
+  IMAGE_SIZE := 51200k
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
 endef
 
