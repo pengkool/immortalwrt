@@ -182,11 +182,21 @@
  				// read-only;
  			};
 
- 			partition@100000 {
- 				label = "config";
- 				reg = <0x100000 0x0060000>;
- 				read-only;
- 			};
+ 			config: partition@100000 {
+				label = "config";
+				reg = <0x100000 0x0060000>;
+				read-only;
+				nvmem-layout {
+					compatible = "fixed-layout";
+					#address-cells = <1>;
+					#size-cells = <1>;
+					macaddr_config_1c: macaddr@1c {
+						compatible = "mac-base";
+						reg = <0x1c 0x6>;
+						#nvmem-cell-cells = <1>;
+					};
+				};
+			};
 
  			Factory: partition@160000 {
  				label = "Factory";
